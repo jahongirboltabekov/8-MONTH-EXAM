@@ -1,0 +1,31 @@
+.banner_div{
+    max-width: 1714px;
+    background-color: #f2f2f3;
+    margin: 0 auto;
+    border-radius: 50px;
+
+    .banner_wrap{
+        display: flex;
+        align-items: center;
+        gap: 359px;
+        
+
+        .banner_text{
+            
+            h1{
+                max-width: 615px;
+                font-family: 'Manrope';
+                font-size: 64px;
+                font-weight: 700;
+                line-height: 87px;
+
+                span{
+                    padding: 5px 40px;
+                    background-color: #454545;
+                    color: white;
+                    border-radius: 100px;
+                }
+            }
+        }
+    }
+}

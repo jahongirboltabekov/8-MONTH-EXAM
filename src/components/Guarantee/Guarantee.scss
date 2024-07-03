@@ -1,0 +1,83 @@
+.main_p{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-family: 'Manrope';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-bottom: 32px;
+
+    a{
+        text-decoration: none;
+        color: #c8c8c8;
+    }
+
+    
+}
+
+.about_text{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    gap: 341px;
+
+    .about_cards{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+
+        h1{
+            font-family: 'Manrope';
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 70px;
+            color: #454545;
+        }
+
+        .about_card{
+            display: flex;
+            flex-direction: column;
+            background-color: #F2F2F2;
+            padding: 32px;
+            border-radius: 15px;
+            gap: 83px;
+        }
+    }
+    
+    .about_p{
+        max-width: 640px;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+
+        h6{
+            font-family: 'Manrope';
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 33.6px;
+            margin-bottom: 28px;
+        }
+
+        p{
+            font-family: 'Manrope';
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 28px !important;
+            color: #000000 !important;
+            margin-bottom: 0px !important;
+        }
+
+        ul{
+            padding-left: 30px;
+            li{
+                font-family: 'Manrope';
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 28px !important;
+                color: #000000 !important;
+            }
+        }
+    }
+}

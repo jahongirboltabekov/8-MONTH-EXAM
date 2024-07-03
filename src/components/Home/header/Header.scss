@@ -1,0 +1,42 @@
+.header_wrap{
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0px 20px 0px;
+
+    ul{
+        display: flex;
+        gap: 27px;
+        list-style: none;
+
+        a{
+            text-decoration: none;
+            font-family: 'Manrope';
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            color: #a2a2a2;
+        }
+        a:hover{
+            color: blue;
+        }
+    }
+
+    .header_p{
+        display: flex;
+        gap: 24px;
+        .p1{
+            font-family: 'Manrope';
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+        }
+
+        .p2{
+            font-family: 'Manrope';
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            color: #a2a2a2;
+        }
+    }
+}

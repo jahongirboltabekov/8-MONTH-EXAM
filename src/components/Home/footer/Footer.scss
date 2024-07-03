@@ -1,0 +1,33 @@
+.footer_div{
+    background-color: #F2F2F2;
+    padding: 79px 0px;
+
+    footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 140px;
+
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            p{
+                font-family: 'Manrope';
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 33px;
+            }
+
+            li{
+                font-family: 'Manrope';
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 22px;
+                color: #9f9f9f;
+            }
+        }
+    }
+
+}
