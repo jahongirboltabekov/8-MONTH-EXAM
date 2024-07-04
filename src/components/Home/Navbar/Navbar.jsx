@@ -15,7 +15,7 @@ function Navbar() {
   const [menu, setMenu] = useState(false);
 
   return (
-    <div>
+    <div className='nav_div'>
         <div className="container">
             <div className={`header_wrap ${menu ? "show" : ""}`}>
                 <div className="model_icons">

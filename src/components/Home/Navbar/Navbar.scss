@@ -1,8 +1,21 @@
+.nav_div{
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 6;
+    background-color: white;
+    box-shadow: rgba(105, 103, 103, 0.24) 0px 10px 20px 0px;
+}
+
+
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0px 81px 0px;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 71px;
+    
 
     .search{
         display: flex;
@@ -190,6 +203,15 @@ nav{
 
 
 @media (max-width:900px){
+    .nav_div{
+        position: sticky;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 6;
+        background-color: white;
+        box-shadow: rgba(105, 103, 103, 0.24) 0px 10px 20px 0px;
+    }
     nav{
         display: flex;
         justify-content: space-between;
@@ -376,12 +398,23 @@ nav{
 }
 
 @media (max-width:700px){
+    .nav_div{
+        position: sticky;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 6;
+        background-color: white;
+        box-shadow: rgba(105, 103, 103, 0.24) 0px 10px 20px 0px;
+        padding-bottom: 10px;
+    }
     nav{
         display: flex;
         align-items: center;
         padding: 10px 0px 10px 0px;
         justify-content: space-between !important;
         position: relative;
+        margin-bottom: 0px;
 
         .menu{
             width: 30px !important;
@@ -511,7 +544,6 @@ nav{
         border: 1px solid #454545;
         border-radius: 100px;
         width: 100%;
-        margin-bottom: 81px;
         
         .header_search{
             outline: none;
