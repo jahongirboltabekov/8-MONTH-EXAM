@@ -27,7 +27,6 @@ function Product({data,title}) {
                         :
                         <FaRegHeart  className='img_icon'/>
                     }
-
             </button>
             <NavLink to={`/products/${el.id}`}>
                 <div className="img">
