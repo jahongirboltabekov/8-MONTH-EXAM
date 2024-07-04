@@ -35,7 +35,7 @@ function Product({data,title}) {
                 </div>
             
                 <div className="card_text">
-                        <h3>{el.title.slice(0, 20)}</h3>
+                    <h3>{el.title.slice(0, 20)}</h3>
                     <div className="text">
                         <p> <del>${el.price * 2}</del>${el.price}</p>
                     </div>
@@ -58,8 +58,12 @@ return (
         <div className="theme">
             <h1>Только проверенные бренды</h1>
             <div className="buttons">
-                <button><HiOutlineArrowLongLeft className=''/></button>
-                <button><HiOutlineArrowLongRight className=''/></button>
+                <div className='arrow_btn'>
+                    <HiOutlineArrowLongLeft />
+                </div>
+                <div className='arrow_btn'>
+                    <HiOutlineArrowLongRight />
+                </div>
             </div>
         </div>
         <div className="img_card">

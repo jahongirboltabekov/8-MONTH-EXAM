@@ -5,7 +5,7 @@
     footer{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 140px;
+        justify-content: space-between;
 
         ul{
             list-style: none;
@@ -30,4 +30,30 @@
         }
     }
 
+}
+
+@media (max-width:850px){
+    footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr !important;
+        justify-content: space-between;
+        padding: 0 30px;
+        gap: 50px;
+        ul{
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width:650px){
+    footer{
+        display: grid;
+        grid-template-columns: 1fr !important;
+        justify-content: space-between;
+        padding: 0 30px;
+        gap: 50px;
+        ul{
+            margin: 0 auto;
+        }
+    }
 }

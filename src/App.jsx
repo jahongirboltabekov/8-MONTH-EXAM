@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './components/Home/footer/Footer'
-import Header from './components/Home/header/Header'
 import Navbar from './components/Home/Navbar/Navbar'
 import About from './pages/About'
 import Blog from './pages/Blog'
@@ -21,7 +20,6 @@ function App() {
   return (
     <>
       <ToastContainer/>
-        <Header/>
         <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>} />
