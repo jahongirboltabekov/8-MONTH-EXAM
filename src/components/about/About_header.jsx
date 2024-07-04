@@ -40,8 +40,12 @@ function About_header() {
             <div className="theme">
                 <h1>Только проверенные бренды</h1>
                 <div className="buttons">
-                    <button><HiOutlineArrowLongLeft className=''/></button>
-                    <button><HiOutlineArrowLongRight className=''/></button>
+                    <div className='arrow_btn'>
+                        <HiOutlineArrowLongLeft />
+                    </div>
+                    <div className='arrow_btn'>
+                        <HiOutlineArrowLongRight />
+                    </div>
                 </div>
             </div>
             <div className="img_card">
