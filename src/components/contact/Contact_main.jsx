@@ -6,7 +6,7 @@ import './Contact.scss'
 
 function Contact_main() {
   return (
-    <div>
+    <div className='contact_div'>
         <div className="container">
             <p className='main_p'> <NavLink>Главная</NavLink><IoIosArrowForward />Контакты</p>
             <div className="about_text">
