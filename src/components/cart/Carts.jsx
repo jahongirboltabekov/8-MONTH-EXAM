@@ -19,25 +19,27 @@ const Carts = () => {
             <div className="img">
                 <img className='pro_img' src={el.url} alt="" />
             </div>
-            <div className="about">
-                <h3>{el.title}</h3>
-                <p>${el?.price*el.quantity}</p>
+            <div className="about_wrap">
+                <div className="about">
+                    <h3>{el.title}</h3>
+                    <p>${el?.price*el.quantity}</p>
+                </div>
+                <h5>{el.decs}</h5>
+                <h5>{el.decs}</h5>
+                                
+                <div className="PlusMinus">
+                    <button disabled={el.quantity<=1} onClick={() => dispatch(decrementCart(el))}>-</button>
+                    <h5 className='count'>{el.quantity}</h5>
+                    <button onClick={() => dispatch(inc(el))}>+</button>
+                    <RiDeleteBin6Line className='remove_btn' onClick={() => dispatch(removeFromCart(el.id))}/>
+                </div>
+                
             </div>
-            <h5>{el.decs}</h5>
-            <h5>{el.decs}</h5>
-                             
-            <div className="PlusMinus">
-                <button disabled={el.quantity<=1} onClick={() => dispatch(decrementCart(el))}>-</button>
-                <h5 className='count'>{el.quantity}</h5>
-                <button onClick={() => dispatch(inc(el))}>+</button>
-            </div>
-            
-            <RiDeleteBin6Line className='remove_btn' onClick={() => dispatch(removeFromCart(el.id))}/>
         </div>
     )
 
   return (
-    <div>
+    <div className='cart_div'>
         <div className="container">
             {
                 card.length
