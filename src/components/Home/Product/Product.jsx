@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Product.scss'
 import { FaRegHeart } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -16,9 +16,10 @@ import { NavLink} from 'react-router-dom';
 function Product({data,title}) {
   let dispatch = useDispatch()
   const wishlist = useSelector(v => v.wishlist.value)
-  
 
-    let product = data?.map((el) =>
+  const [count , setCount] = useState(1)
+
+    let product = data?.slice(0 , 8 * count).map((el) =>
         <div className="card" key={el.id}>
             <button onClick={() => dispatch(toggleHeart(el))}>
                     {
@@ -53,6 +54,9 @@ return (
         </div>
         <div className="products">
             {product}
+        </div>
+        <div className="SeeMoreBtn">
+            <button className='see_btn' onClick={() => setCount(p => p + 1)}>See more</button>
         </div>
         <div className="theme">
             <h1>Только проверенные бренды</h1>

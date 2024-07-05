@@ -1,15 +1,16 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
 import { useDeleteProductMutation, useGetProductsQuery } from '../../../context/api/productApi'
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { BiEdit } from "react-icons/bi";
 import './ManageProduct.scss'
 
 const MangeProduct = () => {
-  let dispatch = useDispatch()
   const {data,isError,isLoading,isFetching,isSuccess}  =  useGetProductsQuery()
-  const {delet}  = useDeleteProductMutation()
- 
+  const [deletProduct] = useDeleteProductMutation()
+  const handleDeletProductById = id => {
+    deletProduct(id)
+  }
+  
   let product = data?.map((el) =>
     <div className="card" key={el.id}>
             <div className="img">
@@ -24,7 +25,7 @@ const MangeProduct = () => {
             </div>
         <div className="buttons">
           <button><BiEdit /></button>
-          <button onClick={() => dispatch(delet)}><RiDeleteBin6Line /></button>
+          <button onClick={() =>handleDeletProductById(el.id)}><RiDeleteBin6Line /></button>
         </div>
     </div>
   );
