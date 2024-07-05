@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Navbar.scss'
 import logo from '../../../assets/logo.svg'
 import burger from '../../../assets/burger.svg'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { FaRegHeart } from "react-icons/fa";
 import { PiXBold } from "react-icons/pi";
 import { BiBarChartAlt } from "react-icons/bi";
@@ -13,7 +13,11 @@ import { HiMiniShoppingCart } from "react-icons/hi2";
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
-
+  
+  const {pathname}= useLocation()
+  if (pathname.includes('/admin')) {
+    return <></>
+  }
   return (
     <div className='nav_div'>
         <div className="container">

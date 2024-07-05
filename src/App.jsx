@@ -11,9 +11,14 @@ import Guarantee from './pages/Guarantee'
 import Home from './pages/Home'
 import Return from './pages/Return'
 import Wishlist from './pages/Wishlist'
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import SingleRoute from './pages/single/SingleRoute'
+import Login from './pages/login/Login'
+import Auth from './pages/auth/Auth'
+import Admin from './pages/admin/Admin'
+
+
 
 function App() {
 
@@ -32,10 +37,15 @@ function App() {
           <Route path='/cart' element={<Cart/>} />
           <Route path='/wishlist' element={<Wishlist/>} />
           <Route path='/products/:id' element={<SingleRoute/>} />
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/' element={<Auth/>}>
+            <Route path='/admin' element={<Admin/>}>
+              
+            </Route>
+          </Route>
         </Routes>
         <Footer/>
     </>
   )
 }
-
 export default App

@@ -18,17 +18,26 @@ const  intialState ={
     location:'',
 }
 
-
 const Carts = () => {
     const card = useSelector(e => e.cart.value)
     let dispatch = useDispatch()
 
+    let sum = card?.reduce((a,b) => a+(b.price * b.quantity), 0)
+
     const {state,setState, handeleChange} = useFormValue(intialState)
     const handeleSubmit = (e) => {
         e.preventDefault()
-        let text= `Buyurtma Ismi:${state.name}\n Email:${state.email}\nTelefon raqami:${state.phone}\nSharx:${state.comment}\n Manzil:${state.location} `
+        let text= `Buyurtma   %0A%0A`
+        text+=`Ismi: ${state.name} %0A%0A`
+        text+=`Email: ${state.email} %0A%0A`
+        text+=`Telefon raqami: ${state.phone} %0A%0A`
+        text+=`Manzil: ${state.location} %0A%0A`
+        text+=`Sharx: ${state.comment} %0A%0A`
         card?.forEach(i => {
-            text+=`Mahsulot nomi:${i.title}\nMiqdori:${i.quantity}\nNarxi:${i.price}`            
+            text+=`Mahsulot nomi: ${i.title} %0A%0A`           
+            text+=`Miqdori: ${i.quantity} ta %0A%0A` 
+            text+=`Narxi: $${i.price} %0A%0A` 
+            text+=`Umumiy Narxi: $${sum} %0A%0A` 
         });
 
         let url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${text}`
@@ -39,7 +48,7 @@ const Carts = () => {
         setState(intialState)
     }
 
-    let sum = card?.reduce((a,b) => a+(b.price * b.quantity), 0)
+    
     let card_product = card?.map((el) =>
         <div className="products"  key={el.id}>
             <div className="img">

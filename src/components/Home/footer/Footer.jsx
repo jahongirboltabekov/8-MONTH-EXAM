@@ -1,10 +1,15 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import './Footer.scss'
 import logo from '../../../assets/logo.svg'
 import carts from '../../../assets/carts.svg'
 
 function Footer() {
+  const {pathname}= useLocation()
+
+    if (pathname.includes('/admin')) {
+        return <></>
+      }
   return (
     <div className='footer_div'>
         <div className="container">
