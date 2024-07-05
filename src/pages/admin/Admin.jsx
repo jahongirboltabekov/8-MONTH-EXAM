@@ -2,6 +2,8 @@ import React from 'react'
 import { NavLink, Outlet} from 'react-router-dom'
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import { LuPencilLine } from "react-icons/lu";
+import { IoIosLogOut } from "react-icons/io";
+
 import './Admin.scss'
 
 
@@ -17,6 +19,9 @@ const Admin = () => {
         <NavLink><li><MdOutlineDashboardCustomize className='icon'/>Create category</li></NavLink> 
         <NavLink><li><LuPencilLine className='icon'/>Manage category</li></NavLink> 
       </ul>
+      <div className="logout_btn">
+        <NavLink to={'/'}><IoIosLogOut /> Log out</NavLink>
+      </div>
     </div>
     <Outlet/>
   </div>

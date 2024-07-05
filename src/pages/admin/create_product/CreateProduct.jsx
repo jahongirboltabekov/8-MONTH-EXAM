@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { toast } from 'react-toastify'
+import { useCreateProductMutation } from '../../../context/api/productApi'
 import './CreateProduct.scss'
 
 const initialState = {
   title:"",
   price:"",
-  images:"",
+  url:"",
   category:"",
   decs: ""
 }
@@ -12,6 +14,7 @@ const initialState = {
 function CreateProduct() {
 
   const [form,setForm] = useState(initialState)
+  const [usePost,{isLoading,isSuccess}] = useCreateProductMutation()
 
   const handleChange = e => {
     let{name,value} = e.target
@@ -21,9 +24,12 @@ function CreateProduct() {
   const handleCreate = e => {
     e.preventDefault()
     form.price = +form.price
-    form.images = form.images.split('\n').filter(i => i.trim())
+    form.url = form.url.split('\n').filter(i => i.trim())
     console.log(form);
+    usePost(form)
+    toast.success('Mahsulot joylandi.')
   }
+
 
   return (
     <div className='creat_product_wrap'>
@@ -39,7 +45,7 @@ function CreateProduct() {
         </div>
         <div  className="create_input">
           <h3>Image-url</h3>
-          <textarea required name='images' value={form.images} onChange={handleChange} type="text" />
+          <textarea required name='url' value={form.url} onChange={handleChange} type="text" />
         </div>
         <div className="create_input">
           <h3>Category</h3>

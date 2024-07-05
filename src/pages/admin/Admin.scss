@@ -23,6 +23,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            margin-bottom: 500px;
             
             a{
                 text-decoration: none;
@@ -48,6 +49,21 @@
             a:hover{
                 background-color: #FFFFFF33;
                 transition: .2s;
+            }
+        }
+
+        .logout_btn{
+            display: flex;
+            align-items: center;
+            
+            a{
+                text-decoration: none;
+                color: white;
+                font-family: 'Manrope';
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 38px;
+                margin-bottom: 24px;
             }
         }
     }
