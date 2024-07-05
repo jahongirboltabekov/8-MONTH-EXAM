@@ -1,7 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import CreateProduct from './create_product/CreateProduct'
-import MangeProduct from './manage_product/MangeProduct'
+import { NavLink, Outlet} from 'react-router-dom'
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import { LuPencilLine } from "react-icons/lu";
 import './Admin.scss'
@@ -14,16 +12,13 @@ const Admin = () => {
     <div className="admin_nav">
       <h1>Admin Dashboard</h1>
       <ul>
-        <li><MdOutlineDashboardCustomize />Create product</li>
-        <li><LuPencilLine />Manage product</li>
-        <li><MdOutlineDashboardCustomize />Create category</li>
-        <li><LuPencilLine />Manage category</li>
+        <NavLink to={'createproduct'}><li><MdOutlineDashboardCustomize className='icon'/>Create product</li></NavLink> 
+        <NavLink to={'mangeproduct'}><li><LuPencilLine className='icon'/>Manage product</li></NavLink> 
+        <NavLink><li><MdOutlineDashboardCustomize className='icon'/>Create category</li></NavLink> 
+        <NavLink><li><LuPencilLine className='icon'/>Manage category</li></NavLink> 
       </ul>
     </div>
-    <Routes>
-      <Route path='createProduct' element={<CreateProduct/>}/>
-      <Route path='mangeproduct' element={<MangeProduct/>}/>
-    </Routes>
+    <Outlet/>
   </div>
   )
 }

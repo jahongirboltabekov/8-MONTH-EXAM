@@ -1,0 +1,101 @@
+.creat_product_wrap{
+    padding: 50px 0px 0px 32px;
+    width: 100%;
+
+    h1{
+        font-family: 'Manrope';
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 30.8px;
+        margin-bottom: 33px;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .create_input{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        h3{
+            font-family: 'Inter';
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 26px;
+        }
+
+        select{
+            max-width: 620px;
+            height: 58px;
+            border-radius: 10px;
+            background-color: #F8F8F8;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #454545;
+            border: none;
+            outline: none;
+        }
+        textarea{
+            resize: none;
+            height: 164px;
+            max-width: 620px;
+            border-radius: 10px;
+            background-color: #F8F8F8;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #454545;
+            border: none;
+            outline: none;
+
+            
+        }
+        input{
+            max-width: 620px;
+            height: 58px;
+            border-radius: 10px;
+            background-color: #F8F8F8;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #454545;
+            border: none;
+            outline: none;
+        }
+
+        select:focus{
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }        
+        textarea:focus{
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+        input:focus{
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+
+
+    }
+
+    .create_button{
+        button{
+            padding: 13px 64px;
+            border: 1px solid #454545;
+            background-color: #454545;
+            color: white;
+            border-radius: 5px;
+            
+        }
+
+        button:hover{
+            color: #454545;
+            background-color: white;
+            transition: .2s;
+        }
+    }
+
+}

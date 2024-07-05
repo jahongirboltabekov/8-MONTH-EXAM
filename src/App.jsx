@@ -16,7 +16,9 @@ import 'react-toastify/dist/ReactToastify.css'
 import SingleRoute from './pages/single/SingleRoute'
 import Login from './pages/login/Login'
 import Auth from './pages/auth/Auth'
+import MangeProduct from './pages/admin/manage_product/MangeProduct'
 import Admin from './pages/admin/Admin'
+import CreateProduct from './pages/admin/create_product/CreateProduct'
 
 
 
@@ -39,8 +41,9 @@ function App() {
           <Route path='/products/:id' element={<SingleRoute/>} />
           <Route path='/login' element={<Login/>}/>
           <Route path='/' element={<Auth/>}>
-            <Route path='/admin' element={<Admin/>}>
-              
+            <Route path='/admin/*' element={<Admin/>}>
+              <Route path='createproduct' element={<CreateProduct/>}/>
+              <Route path='mangeproduct' element={<MangeProduct/>}/>
             </Route>
           </Route>
         </Routes>
