@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { toast } from 'react-toastify'
 import { useCreateProductMutation } from '../../../context/api/productApi'
 import './CreateProduct.scss'
@@ -14,7 +15,7 @@ const initialState = {
 function CreateProduct() {
 
   const [form,setForm] = useState(initialState)
-  const [usePost,{isLoading,isSuccess}] = useCreateProductMutation()
+  const [Post,{isLoading,isSuccess}] = useCreateProductMutation()
 
   const handleChange = e => {
     let{name,value} = e.target
@@ -26,8 +27,9 @@ function CreateProduct() {
     form.price = +form.price
     form.url = form.url.split('\n').filter(i => i.trim())
     console.log(form);
-    usePost(form)
+    Post(form)
     toast.success('Mahsulot joylandi.')
+    setForm(initialState)
   }
 
 

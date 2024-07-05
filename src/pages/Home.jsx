@@ -6,7 +6,7 @@ import Product from '../components/Home/Product/Product'
 import { useGetProductsQuery } from '../context/api/productApi'
 
 function Home() {
-  const {data,isError,isLoading,isFetching,isSuccess}  =  useGetProductsQuery()
+  const {data,isError,isLoading,isFetching,isSuccess}  =  useGetProductsQuery({limit:10})
   
   return (
     <div>

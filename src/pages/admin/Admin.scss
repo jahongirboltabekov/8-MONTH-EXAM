@@ -1,8 +1,11 @@
 .admin_wrap{
     display: flex;
-
+    
     
     .admin_nav{
+        position: sticky;
+        top: 0;
+        left: 0;
         background-color: #454545;
         color: white;
         padding: 50px 70px;
