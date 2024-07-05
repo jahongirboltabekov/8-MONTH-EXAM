@@ -5,15 +5,41 @@ import { BsFillCartXFill } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import './Cart.scss'
 import { NavLink } from 'react-router-dom';
+import {useFormValue} from '../../hooks/useFormValue'
+
+const botToken = '7021165985:AAGwqbId3W_92wuIloV_yeJzDM4Q3n1D7ew';
+const chatId = '-4256618912';
+
+const  intialState ={
+    name:'',
+    email:'',
+    phone:'',
+    comment: '',
+    location:'',
+}
+
 
 const Carts = () => {
     const card = useSelector(e => e.cart.value)
     let dispatch = useDispatch()
 
-    console.log(card);
+    const {state,setState, handeleChange} = useFormValue(intialState)
+    const handeleSubmit = (e) => {
+        e.preventDefault()
+        let text= `Buyurtma Ismi:${state.name}\n Email:${state.email}\nTelefon raqami:${state.phone}\nSharx:${state.comment}\n Manzil:${state.location} `
+        card?.forEach(i => {
+            text+=`Mahsulot nomi:${i.title}\nMiqdori:${i.quantity}\nNarxi:${i.price}`            
+        });
 
-    
+        let url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${text}`
+        
+        let api = new XMLHttpRequest()
+        api.open('GET',url,true)
+        api.send()
+        setState(intialState)
+    }
 
+    let sum = card?.reduce((a,b) => a+(b.price * b.quantity), 0)
     let card_product = card?.map((el) =>
         <div className="products"  key={el.id}>
             <div className="img">
@@ -22,7 +48,7 @@ const Carts = () => {
             <div className="about_wrap">
                 <div className="about">
                     <h3>{el.title}</h3>
-                    <p>${el?.price*el.quantity}</p>
+                    <p>${el?.price*el.quantity }</p>
                 </div>
                 <h5>{el.decs}</h5>
                 <h5>{el.decs}</h5>
@@ -56,29 +82,29 @@ const Carts = () => {
                         {card_product}
                     </div>
 
-                    <form>
+                    <form onSubmit={handeleSubmit}>
                         <div className="buy_inputs">
                             <div className="inputs">
                                 <h1>Оформление</h1>
                                 <div className="input">
-                                    <input required type="text" placeholder='ФИО'/>
-                                    <input required type="text" placeholder='Tелефон'/>
-                                    <input required type="text" placeholder='Электронная почта'/>
+                                    <input required type="text" placeholder='ФИО' name='name' value={state.name} onChange={handeleChange}/>
+                                    <input required type="text" placeholder='Tелефон' name='phone' value={state.phone} onChange={handeleChange}/>
+                                    <input required type="email" placeholder='Электронная почта' name='email' value={state.email} onChange={handeleChange}/>
                                 </div>
                             </div>
                             <div className="location">
                                 <h1>Доставка</h1>
-                                <input required type="text"  placeholder='Адрес доставки'/>
-                                <textarea type="text"  placeholder='Комментарий'/>
+                                <input required type="text"  placeholder='Адрес доставки' name='location' value={state.location} onChange={handeleChange}/>
+                                <textarea type="text"  placeholder='Комментарий' name='comment' value={state.comment} onChange={handeleChange}/>
                             </div>
                         </div>
                         <div className="buy_inputs">
                             <h1>Оплата</h1>
                             <div className="costs">
-                                <p>Товары.............................. ${200}</p>
-                                <p>Доставка.......................... ${50}</p>
+                                <p>Товары.............. ${sum}</p>
+                                <p>Доставка.................${50}</p>
                             </div>
-                            <p className="total_cost">${500}</p>
+                            <p className="total_cost">${sum+50}</p>
                             <div className="cost_btns">
                                 <button>Купить</button>
                                 <p><input required type="checkbox" />Я согласен наобработку моих персональных данных</p>
@@ -86,8 +112,7 @@ const Carts = () => {
                             </div>
                         </div>
                     </form>
-                </div>
-                
+                </div>                
                 :
                 <div className="card_products">
                     <div className="empty">
