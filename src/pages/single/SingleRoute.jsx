@@ -93,6 +93,8 @@ function SingleRoute() {
           </div>
 
         </div>
+
+        
         <h3 className='single_h3'>Характеристика</h3>
         <ul className='ul'>
           <li><p className='p1'>Цвет</p> <p className='p2'>Жёлтый</p></li>
